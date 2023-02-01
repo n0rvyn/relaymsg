@@ -687,6 +687,11 @@ class Message(AndroidConsole):
         # read message only if 'new_msg_label' exist
         if _point:
             self.tap_screen(_point)
+
+            _point = self.get_point_of_text(new_msg_label)
+            if _point:
+                self.tap_screen(_point)
+
             print('Reading 1 new message to screenshot...')
             return self.take_screenshot()
         else:
